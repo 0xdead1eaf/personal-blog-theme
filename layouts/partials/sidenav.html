@@ -1,0 +1,37 @@
+<!-- Side navigation -->
+<div class="sidenav">
+<nav class="wrapper">
+  
+
+  <h2 class="menu-title menu-title-top">menu</h2>
+  <ul >
+  <li class="option">
+  <a href="/index.html">Home</a><span> ◦ </span>
+  </li>
+  <li class="option">
+  <a href="/post/">Blog</a><span> ◦ </span>
+  </li>
+  <!--<li class="option">
+  <a href="/books/index.html">Books</a><span> ◦ </span>
+  </li>-->
+  <!--<li class="option">
+  <a href="/project/">Projects</a><span> ◦ </span>
+  </li>-->
+  <li class="option">
+  <a href="/charts/index.html">Charts</a><span> ◦ </span>
+  </li>
+  <li class="option">
+  <a href="/art/index.html">Artwork</a><span> ◦ </span>
+  </li>
+  <li class="option">
+  <a href="/contact/index.html">Contact</a><span> ◦ </span>
+  </li>
+  </ul>
+  
+{{if eq .Dir "post/"}} 
+<h2 class="menu-title">contents</h2>
+  {{ .Page.TableOfContents | replaceRE "<nav .*>" "" | replaceRE "<li>" "<li class=\"option toc\">" | safeHTML }}
+{{ end }}
+</nav>
+
+</div>
